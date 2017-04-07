@@ -1,0 +1,1 @@
+﻿Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont' -Name 932 -Value 'Source Han Code JP'
