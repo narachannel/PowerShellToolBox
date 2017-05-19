@@ -35,3 +35,5 @@ Copy-Item -Path $copyFrom -FromSession $session -Destination $copyTo
 
 # Send a file into server
 Copy-Item -Path $copyFrom -ToSession $session -Destination $copyTo
+
+Remove-PSSession $session
