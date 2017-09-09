@@ -28,6 +28,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName `
     -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath
 
 # Reset password and disable SSh
+# See https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess
 $RGName = 'TestResources'
 $VmName = 'TestVM'
 $Location = 'eastus'
@@ -47,3 +48,6 @@ Set-AzureRmVMExtension -ResourceGroupName $RGName -VMName $VmName -Location $Loc
   -Name $ExtensionName -Publisher $Publisher -ExtensionType $ExtensionName `
   -TypeHandlerVersion $Version `
   -Settingstring $PublicConf -ProtectedSettingString $PrivateConf
+
+# Configure network security
+# https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-powershell
